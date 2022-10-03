@@ -5,27 +5,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     lateinit var myText : TextView;
     lateinit var myButton : Button;
+    lateinit var myEditText : EditText;
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        var clicked = false;
         myText = findViewById(R.id.myText);
-        myText.visibility = View.INVISIBLE;
         myButton = findViewById(R.id.myButton);
+        myEditText = findViewById(R.id.myEditText);
         myButton.setOnClickListener {
-            if (!clicked){
-                myText.visibility = View.VISIBLE;
-                myButton.text = "Hide the text"
-                clicked = true;
+            if (myEditText.text.length != 0){
+                myText.text = "Hello "+myEditText.text;
             }else{
-                myText.visibility = View.INVISIBLE;
-                myButton.text = "Show text";
-                clicked=false;
+                myText.text = "Hello DSI31";
             }
         }
 
