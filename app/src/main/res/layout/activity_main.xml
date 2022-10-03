@@ -29,7 +29,12 @@
         android:id="@+id/myEditText"
         android:hint="Donner votre nom"
         ></EditText>
-    
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/myImage"
+        android:src="@drawable/img"
+        />
 
 
 
